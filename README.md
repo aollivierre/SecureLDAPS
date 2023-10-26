@@ -50,11 +50,11 @@ New-LocalUser -Name $userName -Password $password -FullName "Local Admin" -Descr
 
 # Add the account to the Administrators group  
 Add-LocalGroupMember -Group "Administrators" -Member $userName
-
+```
 
 
 # Set the Password to Never Expire
-
+```powershell
 Set-LocalUser -Name $userName -PasswordNeverExpires $true
 ```
 
