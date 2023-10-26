@@ -55,7 +55,6 @@ Add-LocalGroupMember -Group "Administrators" -Member $userName
 
 # Set the Password to Never Expire
 
-```powershell
 Set-LocalUser -Name $userName -PasswordNeverExpires $true
 ```
 
