@@ -139,9 +139,35 @@ New-Mailbox -Shared -Name "Sales Department" -DisplayName "Sales Department" -Al
 Add-MailboxPermission -Identity "sales" -User jdoe -AccessRights FullAccess -InheritanceType All
 ```
 
+# Local Account Management
+
+- `0-New-LocalAdmin.ps1` - Creates a new local admin account
+- `Get-LocalUser.ps1` - Gets details on local users and exports to CSV
+
+# Domain Account Management
+
+- `0-New-DomainAdmin.ps1` - Creates a new domain admin account
+
+# LDAP/LDAPS Configuration
+
+- `1-Check-LDAP_Port.ps1` - Checks if LDAP ports are open
+- `2-Create-LDAP_Firewall.ps1` - Opens LDAP ports in firewall
+- `OpenSSL_LDAP_SSO_DC2\5-CertReq.ps1` - Generates CSR for LDAPS certificate
+- `OpenSSL_LDAP_SSO_DC2\7-CertReq_Accept.ps1` - Accepts/imports LDAPS certificate
+- `OpenSSL_LDAP_SSO_DC2\9-Enable-LDAPS.ps1` - Enables LDAPS in Active Directory
+- `OpenSSL_LDAP_SSO_DC2\11-Export-LDAPsPfx.ps1` - Exports LDAPS certificate
+- `OpenSSL_LDAP_SSO_DC2\12-Test-LDAPS.ps1` - Tests LDAPS connectivity
+
+# Exchange Mailboxes
+
+- `Exchange\LDAP_FortiMail\14-Create-FortiMailTest.ps1` - Creates a test mailbox
+- `Exchange\LDAP_FortiMail\15-GetUsersMailboxDB-info.ps1` - Gets all mailboxes and exports to CSV
+- `Exchange\LDAP_FortiMail\16-Create-DMARC-SharedMailbox.ps1` - Creates a shared DMARC mailbox
+
 # Helper Scripts
 
-- `3-Find-FQDN.ps1`: Get the Fully Qualified Domain Name of the current host.
-- `1.1-Check-FirewallRule.ps1`: Display existing firewall rules.
+- `3-Find-FQDN.ps1` - Gets FQDN of current host
+- `1.1-Check-FirewallRule.ps1` - Displays firewall rules (documentation example)
+
 
 **Note:** This wiki is intended for technical users familiar with Windows administration, Active Directory, and PowerShell scripting. Always make sure to test scripts in a controlled environment before deploying in production.
